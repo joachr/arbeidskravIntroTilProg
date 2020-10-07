@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FindYourLove</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>FindYourLove - Alle profiler</h1>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="profil-forslag.html">Profil-forslag</a></li>
+            <li><a href="hunder.html">Ønsker du hund i tillegg til kjæreste?</a></li>
+        </ul>
+    </nav>
+
+    <hr>
+
+    <div id="output_Div"></div>
+
+    <script>
+        
+        //VARIABLER//
+        let outputDiv = document.getElementById("output_Div");
+        let imagesOutput = document.getElementById("images_Output");
+        
+        //ARRAYS//
+        let profilInfo = [
+            [`<img src="images/man1.jpg">`, "Torstein Røgge", "24 år gammel", "Sportsfisker", `<hr>`],
+            [`<img src="images/man2.jpg">`, "Brede Knothaug", "22 år gammel", "Riksarkivar", `<hr>`],
+            [`<img src="images/man3.jpg">`, "Knut Arkland", "25 år gammel", "Sommelier", `<hr>`],
+            [`<img src="images/woman1.jpg">`, "Mina Bustgren", "25 år gammel", "Småfly-pilot", `<hr>`],
+            [`<img src="images/woman2.jpg">`, "Inga Smelbakk", "23 år gammel", "Hattemaker", `<hr>`],
+            [`<img src="images/woman3.jpg">`, "Alma Fjysing", "24 år gammel", "Oberstløytnant", `<hr>`]
+        ];
+
+        //LOOPS//
+        for (let i = 0; i < profilInfo.length; i++) {
+            for (let j = 0; j < profilInfo[i].length; j++) {
+                outputDiv.innerHTML += `<p>${profilInfo[i][j]}</p>`;
+            }
+        };
+
+    </script>
+
+</body>
+</html>

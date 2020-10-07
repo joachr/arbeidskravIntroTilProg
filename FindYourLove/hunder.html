@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hund i tillegg til kjæreste</title>
+</head>
+<body>
+    
+    <h1>Ønsker du hund i tillegg til kjæreste?</h1>
+    <nav>
+        <ul>
+            <li><a href="profil-forslag.html">Profil-forslag</a></li>
+            <li><a href="alle-profiler.html">Alle profiler</a></li>
+        </ul>
+    </nav>
+    <hr>
+    <button id="correctBtn" onclick="niceFunction()" type="button">Ja, selvsagt</button>
+    <button id="wrongBtn" onclick="badFunction()" type="button">Nei, jeg er dum og teit</button>
+    
+    <div id="output_div"></div>
+    
+    <script>
+        var outputDiv = document.getElementById("output_div")
+        
+        function niceFunction(){
+            outputDiv.innerHTML = `<h2>Utmerket valg!</h2><br>
+                                    <p>Her er en liste med flotte hunderaser å velge mellom:<br><ul>
+                                    <li>Cocker Spaniel</li>
+                                    <li>Australian Cobberdog</li>
+                                    <li>Irsk ulvehund. OBS: Denne er stor</li>
+                                    <li>Greyhound. OBS: Veldig rask</li>
+                                    </ul>`
+        }
+        
+        function badFunction(){
+            outputDiv.innerHTML = `<h2>Feil valg!</h2><br>
+                                    <p>Her er en liste med endringer du kan gjøre i deg selv for å bli et bedre menneske:<br><ul>
+                                    <li>Spise mer snacks</li>
+                                    <li>Se på Bondi Vet på Youtube</li>
+                                    <li>Kjøpe pølser på Annis Pølsemakeri</li>
+                                    <li>Ha mange planter i hjemmet</li>
+                                    </ul>`
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Et forslag</title>
+</head>
+<body>
+
+	<div>
+		
+		<header>
+			<h1>FindYourLove</h1>
+		</header>
+		
+		<nav>
+			<ul>
+				<li><a href="alle-profiler.html">Alle profiler</a></li>
+				<li><a href="hunder.html">Ønsker du hund i tillegg til kjæreste?</a></li>
+			</ul>
+		</nav>
+		
+		<main>
+		
+			<section>
+				<label>Tast inn ønsket alder</label>
+				<input id="age_input" type="text"><br>
+				<label>Mann eller kvinne?</label>
+				<input id="gender_input" type="text">
+				<input id="buttonID" type="button" onclick="chooseProfile()" value="Vis forslag">
+			</section>
+			
+			<section>
+			<div id="profile_output"></div>
+			</section>
+			
+		</main>
+		
+	</div>
+	
+	<script>
+        
+        //VARIABLER//
+        let profileOutput = document.getElementById("profile_output");
+        let ageInput = document.getElementById("age_input");
+        let genderInput = document.getElementById("gender_input");
+        let button = document.getElementById("buttonID");
+        
+        //ARRAY//
+        var profilInfo = [
+                ["Torstein Røgge", " 24", " Sportsfisker"],
+                ["Brede Knothaug", " 22", " Riksarkivar"],
+                ["Knut Arkland", " 25", " Sommelier"],
+                ["Mina Bustgren", " 25", " Småfly-pilot"],
+                ["Inga Smelbakk", " 23", " Hattemaker"],
+                ["Alma Fjysing", " 24", " Oberstløytnant"]
+            ];
+        
+        //FUNKSJON//
+        function chooseProfile(){
+            let age = parseInt(ageInput.value);
+            let gender = genderInput.value;
+            if (age >= 25 && gender === "Mann" || age >= 25 && gender === "mann") {
+                profileOutput.innerHTML = `<h3>${profilInfo[2]}</h3><br>
+                                            <img src="images/man3.jpg">`;
+            } else if (age >= 25 && gender === "Kvinne" || age >= 25 && gender === "kvinne"){
+                profileOutput.innerHTML = `<h3>${profilInfo[3]}</h3><br>
+                                            <img src="images/woman1.jpg">`;
+            } else {
+                profileOutput.innerHTML = `<h3>Ingen forslag til deg i dag.</h3>`;
+            }
+        }
+        
+    </script>
+	
+</body>
+</html>
